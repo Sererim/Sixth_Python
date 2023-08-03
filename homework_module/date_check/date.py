@@ -71,4 +71,4 @@ def _leap_year(year: int) -> bool:
 
 if __name__ == "__main__":
     print(date("11.11.1111"))
-    print(date("29.02.2"))
+    print(date("29.02.2012"))
