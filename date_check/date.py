@@ -39,7 +39,7 @@ def date(raw_date: str) -> bool:
         if 1 <= list_date[1] <= 12:
             if list_date[0] in range(_allowed_day.get(list_date[1]) + 1):
                 return True
-            elif list_date[1] == 2 and _leap_year(list_date[2]) and list_date == 29:
+            elif list_date[1] == 2 and _leap_year(list_date[2]) and list_date[0] == 29:
                 return True
             else:
                 print(f"Date with day {list_date[0]} doesn't exist.")
@@ -71,4 +71,4 @@ def _leap_year(year: int) -> bool:
 
 if __name__ == "__main__":
     print(date("11.11.1111"))
-    print(date("29.02.2012"))
+    print(date("29.02.2"))
