@@ -1,12 +1,12 @@
 # В модуль с проверкой даты добавьте возможность запуска в терминале с передачей даты на проверку.
 
-from date_check import date_console
-from date_check import date
+from homework_module import date
+from homework_module import console_call
 
 
 time = str(input("Enter date.\nFormat is DD.MM.YYYY\n"))
 print(date(time))
-date_console.console_call()
+console_call()
 
 # Добавьте в пакет, созданный на семинаре шахматный модуль. Внутри него напишите код, решающий задачу о 8 ферзях.
 # Известно, что на доске 8×8 можно расставить 8 ферзей так, чтобы они не били друг друга. 
