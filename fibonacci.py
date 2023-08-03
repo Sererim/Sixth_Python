@@ -5,6 +5,7 @@
 # f2 = 1
 # f3 = 2
 # f4 = 3
+# Correct implementation of Fibonacci function with generator.
 def fibonacci() -> int:
     fn0 = 0
     fn1 = 1
@@ -18,5 +19,5 @@ def fibonacci() -> int:
 
 if __name__ == "__main__":
     fib = fibonacci()
-    for i in range(10):
+    for i in range(15):
         print(next(fib))
