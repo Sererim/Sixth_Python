@@ -32,22 +32,24 @@ def date(raw_date: str) -> bool:
     
     list_date: list[int] = list(map(int, raw_date.split(".")))
     
-    
     if len(list_date) != 3:
         raise Exception("Wrong date format.\nCorrect date format is DD.MM.YYYY")
     
-    if list_date[2] < 1 or list_date[2] > 9999:
-        print(f"Date with year {list_date[2]} doesn't exist.")
-    if list_date[1] < 1 or list_date[1] > 12:
-        print(f"Date with month {list_date[1]} doesn't exist.")
-    if list_date[0] in range(_allowed_day.get(list_date[1]) + 1):
-        return True
-    else: 
-        if list_date[1] == 2 and _leap_year(list_date[2]) and list_date[0] == 29:
-            return True
+    if 1 <= list_date[2] <= 9999:
+        if 1 <= list_date[1] <= 12:
+            if list_date[0] in range(_allowed_day.get(list_date[1]) + 1):
+                return True
+            elif list_date[1] == 2 and _leap_year(list_date[2]) and list_date == 29:
+                return True
+            else:
+                print(f"Date with day {list_date[0]} doesn't exist.")
         else:
-            return False        
-
+            print(f"Date with month {list_date[1]} doesn't exist.")
+    else:
+        print(f"Date with year {list_date[2]} doesn't exist.")
+    
+    return False
+                
 
 def _leap_year(year: int) -> bool:
     """Function to check if the year is
