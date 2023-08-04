@@ -2,6 +2,8 @@
 
 from homework_module import date
 from homework_module import console_call
+from homework_module import solution
+from homework_module import random_placement_solution
 
 
 time = str(input("Enter date.\nFormat is DD.MM.YYYY\n"))
@@ -14,3 +16,13 @@ console_call()
 # Программа получает на вход восемь пар чисел, каждое число от 1 до 8 - координаты 8 ферзей. 
 # Если ферзи не бьют друг друга верните истину, а если бьют - ложь.
 
+print(solution([[0, 0], [1, 1], [2, 2], [3, 3], 
+            [4, 4], [5, 5], [6, 6], [7, 7]]))
+
+
+# Напишите функцию в шахматный модуль. 
+# Используйте генератор случайных чисел для случайной расстановки ферзей в задаче выше. 
+# Проверяйте различный случайные варианты и выведите 4 успешных расстановки.
+
+
+print(random_placement_solution())
