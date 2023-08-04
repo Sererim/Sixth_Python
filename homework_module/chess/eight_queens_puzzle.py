@@ -1,3 +1,5 @@
+from random import sample
+
 _board = [[0]*8 for _ in range(8)]
 
 def solution(queens: list[list[int]]) -> bool | None:
@@ -22,11 +24,10 @@ def solution(queens: list[list[int]]) -> bool | None:
     for x in queens:
         _board[x[0]][x[1]] = 1
     
-    for i in _board:
-        print(i)
-    
     for x in queens:
         if not attack(x[0], x[1]):
+            for i in _board:
+                print(i)
             return True
         
     return False
@@ -46,8 +47,31 @@ def attack(x: int, y: int) -> bool:
                     return True
     
     return False
+
+
+def random_placement_solution() -> None:
+    all_positions = [i for i in range(8)]
+    positions = []
+    place = []
+    count = 0
+    
+    while count != 4:
         
+        for i in range(8):
+            place = sample(all_positions, 2)
+            if place not in positions:
+                positions.append(place)
+            else:
+                i -= 1
+        
+        if solution(positions):
+            print(positions)
+            count += 1
+    
+    positions = []
+    
 
 if __name__ == "__main__":
-    print(solution([[0, 0], [1, 1], [2, 2], [3, 3], 
-              [4, 4], [5, 5], [6, 6], [7, 7]]))
+    # print(solution([[0, 0], [1, 1], [2, 2], [3, 3], 
+    #           [4, 4], [5, 5], [6, 6], [7, 7]]))
+    random_placement_solution()
